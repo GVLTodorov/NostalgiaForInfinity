@@ -30,7 +30,7 @@ jobs:
           unzip latest_release.zip
           RANDOM_FOLDER=$(ls -d */ | head -n 1)
           mv "$RANDOM_FOLDER"/* .
-          rmdir "$RANDOM_FOLDER"
+          rm -rf "$RANDOM_FOLDER"
           cp ./Docker/Dockerfile.custom ./Dockerfile
 
       - name: Log in to the Container registry
