@@ -32,7 +32,7 @@ jobs:
           mv "$RANDOM_FOLDER"/* .
           rm -rf "$RANDOM_FOLDER"
           ls -l
-          cp ./Docker/Dockerfile.custom ./Dockerfile
+          cp ./docker/Dockerfile.custom ./Dockerfile
 
       - name: Log in to the Container registry
         uses: docker/login-action@v3
