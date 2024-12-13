@@ -31,6 +31,7 @@ jobs:
           RANDOM_FOLDER=$(ls -d */ | head -n 1)
           mv "$RANDOM_FOLDER"/* .
           rm -rf "$RANDOM_FOLDER"
+          ls -l
           cp ./Docker/Dockerfile.custom ./Dockerfile
 
       - name: Log in to the Container registry
