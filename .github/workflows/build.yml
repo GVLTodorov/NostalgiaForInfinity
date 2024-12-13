@@ -24,7 +24,7 @@ jobs:
       - name: Clone NostalgiaForInfinity repository
         run: |
           git clone --branch main https://github.com/iterativv/NostalgiaForInfinity.git
-          cp Docker/Dockerfile.custom ./Dockerfile
+          cp ./Docker/Dockerfile.custom ./Dockerfile
 
       - name: Log in to the Container registry
         uses: docker/login-action@v3
