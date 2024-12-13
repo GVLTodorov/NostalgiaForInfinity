@@ -21,9 +21,13 @@ jobs:
       packages: write
 
     steps:
-      - name: Clone NostalgiaForInfinity repository
+      - name: Download and extract latest release
         run: |
-          git clone --branch main https://github.com/iterativv/NostalgiaForInfinity.git
+          curl -s https://api.github.com/repos/iterativv/NostalgiaForInfinity/releases/latest \
+          | grep "browser_download_url.*zip" \
+          | cut -d '"' -f 4 \
+          | wget -i -
+          unzip *.zip
           cp ./Docker/Dockerfile.custom ./Dockerfile
 
       - name: Log in to the Container registry
