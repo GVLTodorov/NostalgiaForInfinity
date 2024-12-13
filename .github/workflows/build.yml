@@ -27,7 +27,10 @@ jobs:
           | grep "zipball" \
           | cut -d '"' -f 4 \
           | wget -i - -O latest_release.zip
-          unzip *.zip
+          unzip latest_release.zip
+          RANDOM_FOLDER=$(ls -d */ | head -n 1)
+          mv "$RANDOM_FOLDER"/* .
+          rmdir "$RANDOM_FOLDER"
           cp ./Docker/Dockerfile.custom ./Dockerfile
 
       - name: Log in to the Container registry
